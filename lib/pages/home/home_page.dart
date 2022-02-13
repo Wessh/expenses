@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   final title;
-  final expense = [
+  final _transaction = [
     Transaction(
         id: '1',
         name: 'Galão de água',
@@ -28,16 +28,20 @@ class HomePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          SizedBox(
+        children: [
+          const SizedBox(
             child: Card(
               child: Text('Gráficos',),
               elevation: 3,
             ),
           ),
-          Card(
-            child: Text('Despesas'),
-          )
+          Column(
+            children: _transaction.map((tr) =>
+                Card(
+                  child:
+                  Text(tr.name),
+                )).toList(),
+          ),
         ],
       )
     );
