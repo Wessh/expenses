@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../pages/home_page.dart';
+import '../pages/home/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange
       ),
-      home: const HomePage(title: 'Expense App',),
+      home: HomePage(title: 'Expense App',),
     );
   }
 }
