@@ -1,4 +1,5 @@
 import 'package:expenses/models/transaction.dart';
+import 'package:expenses/widgets/expensecard_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,7 +40,7 @@ class HomePage extends StatelessWidget {
             children: _transaction.map((tr) =>
                 Card(
                   child:
-                  Text(tr.name),
+                  ExpenseCardWidget(id: tr.id,title: tr.name, date: tr.date, value: tr.value, ),
                 )).toList(),
           ),
         ],
