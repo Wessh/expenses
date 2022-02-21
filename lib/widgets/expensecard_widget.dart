@@ -1,3 +1,4 @@
+import 'package:expenses/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseCardWidget extends StatelessWidget {
@@ -30,16 +31,17 @@ class ExpenseCardWidget extends StatelessWidget {
             Text(
                 value.toString(),
             style: const TextStyle(
-              color: Colors.red,
+              color: AppColors.primaryColor,
             ),),
           //Icon(Icons.attach_money),
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title.toString()),
+              title.toString(),style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
             Text(
-              newDate
+              newDate, style: const TextStyle(color: AppColors.variantColor),
             ),
           ],
         ),
