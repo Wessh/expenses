@@ -1,17 +1,17 @@
 import 'package:expenses/core/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ExpenseCardWidget extends StatelessWidget {
-  final title;
+  final String title;
   final DateTime date;
-  final value;
-  final id;
+  final dynamic value;
+  final dynamic id;
 
   const ExpenseCardWidget({Key? key, required this.title, required this.date, required this.value, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final newDate = date.day.toString() +'/'+ date.month.toString() +'/'+ date.year.toString();
     return Row(
       children: [
         Container(
@@ -29,7 +29,7 @@ class ExpenseCardWidget extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child:
             Text(
-                value.toString(),
+                'R\$ $value',
             style: const TextStyle(
               color: AppColors.primaryColor,
             ),),
@@ -41,7 +41,7 @@ class ExpenseCardWidget extends StatelessWidget {
             Text(
               title.toString(),style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
             Text(
-              newDate, style: const TextStyle(color: AppColors.variantColor),
+              DateFormat('d/MMM/y').format(date), style: const TextStyle(color: AppColors.variantColor),
             ),
           ],
         ),
